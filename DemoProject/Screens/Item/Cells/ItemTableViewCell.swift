@@ -21,7 +21,18 @@ class ItemTableViewCell: UITableViewCell {
         
         viewCategory.layer.cornerRadius = viewCategory.frame.height / 2
         innerView.layer.cornerRadius = 15
+        
+        roundTopCorners(of: imgItem, radius: 15)
                 
+    }
+    
+    func roundTopCorners(of imageView: UIImageView, radius: CGFloat) {
+            let path = UIBezierPath(roundedRect: imageView.bounds,
+                                    byRoundingCorners: [.topLeft, .topRight],
+                                    cornerRadii: CGSize(width: radius, height: radius))
+            let mask = CAShapeLayer()
+            mask.path = path.cgPath
+            imageView.layer.mask = mask
     }
 
     override func setSelected(_ selected: Bool, animated: Bool) {
