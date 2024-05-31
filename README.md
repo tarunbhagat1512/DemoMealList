@@ -11,3 +11,5 @@ to call the Api i had used URLSession
 
 for loading the image i had used SDWebImage Pod
 
+Also Attached Video of the application run inside the Project Folder only.
+
